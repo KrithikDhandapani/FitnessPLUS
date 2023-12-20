@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSHealthShareUsageDescription</key>
+    <string>We need access to your health data for tracking steps, heart rate, and other activity.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>We need access to your health data for updating your activity records.</string>
+
+	<key>com.apple.developer.healthkit</key>
+	<true/>
+	<key>com.apple.developer.healthkit.access</key>
+	<array>
+		<string>health-records</string>
+	</array>
+	<key>com.apple.developer.healthkit.background-delivery</key>
+	<true/>
+    
+
+</dict>
+</plist>

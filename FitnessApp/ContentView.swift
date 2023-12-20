@@ -9,6 +9,7 @@ struct ContentView: View {
     @StateObject private var userData = UserData()
     @State private var isCreateAccountActive = false
     @State private var isLoggedIn = false
+    @State private var loginError: String?
 
     var body: some View {
         NavigationView {
@@ -34,18 +35,24 @@ struct ContentView: View {
                     .cornerRadius(8)
                     .padding(.horizontal, 20)
 
+                if let loginError = loginError {
+                    Text(loginError)
+                        .foregroundColor(.red)
+                        .padding(.bottom, 10)
+                }
+
                 NavigationLink(destination: HomeScreenView(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
                 .hidden()
 
-
                 Button(action: {
                     // Add login logic here
                     if UserDefaults.standard.string(forKey: userData.username) == userData.password {
                         isLoggedIn = true
+                        loginError = nil
                     } else {
-                        print("Login failed. Incorrect username or password.")
+                        loginError = "Incorrect username or password"
                     }
                 }) {
                     Text("Log In")
@@ -63,7 +70,7 @@ struct ContentView: View {
                 }) {
                     Text("Create Account")
                         .foregroundColor(.accentColor)
-                        .padding(.top, 10)
+                        .padding(.top, 20)
                 }
                 .sheet(isPresented: $isCreateAccountActive, onDismiss: {
                     // Reset data after creating an account
@@ -80,6 +87,9 @@ struct ContentView: View {
         }
     }
 }
+
+// Rest of the code remains unchanged...
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

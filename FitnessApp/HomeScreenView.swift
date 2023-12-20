@@ -46,6 +46,19 @@ struct HomeScreenView: View {
                                 .clipShape(Circle())
                         }
                         .padding(.leading, 20)
+
+                        // Add the ActivityTrackerView button
+                        NavigationLink(destination: ActivityTrackerView()) {
+                            Image(systemName: "star.fill") // Placeholder icon
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(.white)
+                                .padding(15)
+                                .background(Color.purple) // Adjust color as needed
+                                .clipShape(Circle())
+                        }
+                        .padding(.leading, 20)
                     }
                     .padding(.bottom, 20)
                 }

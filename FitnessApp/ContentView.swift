@@ -14,24 +14,39 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                // Arched Title
+                HStack {
+                    Spacer()
+                    Text("Fitness")
+                        .font(.system(size: 36, weight: .bold))
+                        .foregroundColor(.orange)
+                    Text("PLUS")
+                        .font(.system(size: 36, weight: .bold))
+                        .foregroundColor(.orange)
+                    Spacer()
+                }
+                .padding(.top, 20)
+
                 Spacer()
 
                 Image(systemName: "person.circle")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100, height: 100)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.orange) // Change the profile logo color to orange
 
                 TextField("Username", text: $userData.username)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .foregroundColor(.black) // Change text color to black
+                    .background(RoundedRectangle(cornerRadius: 8).stroke(Color.orange, lineWidth: 1)) // Add orange border
                     .cornerRadius(8)
                     .padding(.horizontal, 20)
                     .autocapitalization(.none)
 
                 SecureField("Password", text: $userData.password)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .foregroundColor(.black) // Change text color to black
+                    .background(RoundedRectangle(cornerRadius: 8).stroke(Color.orange, lineWidth: 1)) // Add orange border
                     .cornerRadius(8)
                     .padding(.horizontal, 20)
 
@@ -47,25 +62,18 @@ struct ContentView: View {
                 .hidden()
 
                 Button(action: {
-                    // Add login logic here
-                    if UserDefaults.standard.string(forKey: userData.username) == userData.password {
-                        isLoggedIn = true
-                        loginError = nil
-                    } else {
-                        loginError = "Incorrect username or password"
-                    }
+                    login()
                 }) {
                     Text("Log In")
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
+                        .background(Color.orange) // Change the button background color to orange
                         .cornerRadius(8)
                         .padding(.horizontal, 20)
                 }
 
                 Button(action: {
-                    // Set the flag to activate the navigation
                     isCreateAccountActive = true
                 }) {
                     Text("Create Account")
@@ -73,7 +81,6 @@ struct ContentView: View {
                         .padding(.top, 20)
                 }
                 .sheet(isPresented: $isCreateAccountActive, onDismiss: {
-                    // Reset data after creating an account
                     userData.username = ""
                     userData.password = ""
                 }) {
@@ -83,13 +90,20 @@ struct ContentView: View {
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("Login", displayMode: .inline)
+            .navigationBarTitle("", displayMode: .inline)
+            .background(Color.white)
+        }
+    }
+
+    private func login() {
+        if UserDefaults.standard.string(forKey: userData.username) == userData.password {
+            isLoggedIn = true
+            loginError = nil
+        } else {
+            loginError = "Incorrect username or password"
         }
     }
 }
-
-// Rest of the code remains unchanged...
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -108,14 +122,16 @@ struct CreateAccountView: View {
 
             TextField("New Username", text: $userData.username)
                 .padding()
-                .background(Color.gray.opacity(0.2))
+                .foregroundColor(.black) // Change text color to black
+                .background(RoundedRectangle(cornerRadius: 8).stroke(Color.orange, lineWidth: 1)) // Add orange border
                 .cornerRadius(8)
                 .padding(.horizontal, 20)
                 .autocapitalization(.none)
 
             SecureField("New Password", text: $userData.password)
                 .padding()
-                .background(Color.gray.opacity(0.2))
+                .foregroundColor(.black) // Change text color to black
+                .background(RoundedRectangle(cornerRadius: 8).stroke(Color.orange, lineWidth: 1)) // Add orange border
                 .cornerRadius(8)
                 .padding(.horizontal, 20)
 
@@ -131,23 +147,13 @@ struct CreateAccountView: View {
             .padding(.horizontal, 20)
 
             Button(action: {
-                // Add create account logic here
-                // For now, let's print the new username, password, and birthdate
-                print("New Username: \(userData.username)")
-                print("New Password: \(userData.password)")
-                print("Birthdate: \(birthDate)")
-
-                // Save user data to UserDefaults
-                UserDefaults.standard.set(userData.password, forKey: userData.username)
-
-                // Dismiss the sheet and go back to the login view
-                isCreateAccountActive = false
+                createAccount()
             }) {
                 Text("Create Account")
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.accentColor)
+                    .background(Color.orange) // Change the button background color to orange
                     .cornerRadius(8)
                     .padding(.horizontal, 20)
             }
@@ -156,5 +162,26 @@ struct CreateAccountView: View {
         }
         .padding()
         .navigationBarTitle("Create Account", displayMode: .inline)
+        .background(Color.white)
+    }
+
+    private func createAccount() {
+        guard !userData.username.isEmpty && !userData.password.isEmpty else {
+            print("Username and password cannot be empty.")
+            return
+        }
+
+        if UserDefaults.standard.string(forKey: userData.username) != nil {
+            print("Username already exists. Choose a different one.")
+            return
+        }
+
+        print("New Username: \(userData.username)")
+        print("New Password: \(userData.password)")
+        print("Birthdate: \(birthDate)")
+
+        UserDefaults.standard.set(userData.password, forKey: userData.username)
+
+        isCreateAccountActive = false
     }
 }

@@ -6,59 +6,42 @@ struct HomeScreenView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.systemGray6)
+                Color.white
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    // Move the smiley face logo to the top
-                    Image(systemName: "smiley.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(.yellow)
-                        .padding()
-
                     Spacer()
 
-                    HStack {
+                    HStack(spacing: 20) {
                         // Show the DietLogView button
                         NavigationLink(destination: DietLogView()) {
-                            Image(systemName: "book.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
+                            Text("Log Food")
                                 .foregroundColor(.white)
                                 .padding(15)
-                                .background(Color.green)
-                                .clipShape(Circle())
+                                .background(Color.orange) // Change the button color to orange
+                                .cornerRadius(8)
+                                .frame(width: 120, height: 120)
                         }
-                        .padding(.leading, 20)
 
                         // Show the WorkoutView button
                         NavigationLink(destination: WorkoutView()) {
-                            Image(systemName: "arrow.right.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
+                            Text("Workout Plan")
                                 .foregroundColor(.white)
                                 .padding(15)
-                                .background(Color.blue)
-                                .clipShape(Circle())
+                                .background(Color.orange) // Change the button color to orange
+                                .cornerRadius(8)
+                                .frame(width: 120, height: 120)
                         }
-                        .padding(.leading, 20)
 
                         // Add the ActivityTrackerView button
                         NavigationLink(destination: ActivityTrackerView()) {
-                            Image(systemName: "star.fill") // Placeholder icon
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
+                            Text("Activity Tracker")
                                 .foregroundColor(.white)
                                 .padding(15)
-                                .background(Color.purple) // Adjust color as needed
-                                .clipShape(Circle())
+                                .background(Color.orange) // Change the button color to orange
+                                .cornerRadius(8)
+                                .frame(width: 120, height: 120)
                         }
-                        .padding(.leading, 20)
                     }
                     .padding(.bottom, 20)
                 }

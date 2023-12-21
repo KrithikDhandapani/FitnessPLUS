@@ -1,21 +1,22 @@
 import SwiftUI
 
-struct WorkoutView: View {
+struct CardioWorkoutView: View {
     struct WorkoutRoutine {
         var name: String
-        var sets: Int
-        var reps: Int
+        var duration: Int // in minutes
     }
 
     let workoutRoutines: [WorkoutRoutine] = [
-        WorkoutRoutine(name: "Push-ups", sets: 3, reps: 15),
-        WorkoutRoutine(name: "Squats", sets: 4, reps: 12),
-        WorkoutRoutine(name: "Planks", sets: 3, reps: 30),
-        WorkoutRoutine(name: "Jumping Jacks", sets: 3, reps: 20),
-        WorkoutRoutine(name: "Lunges", sets: 4, reps: 12),
-        WorkoutRoutine(name: "Burpees", sets: 3, reps: 10),
-        WorkoutRoutine(name: "Sit-ups", sets: 3, reps: 15),
-        WorkoutRoutine(name: "Mountain Climbers", sets: 3, reps: 20)
+        WorkoutRoutine(name: "Running", duration: 20),
+        WorkoutRoutine(name: "Jump Rope", duration: 15),
+        WorkoutRoutine(name: "Cycling", duration: 30),
+        WorkoutRoutine(name: "Elliptical Trainer", duration: 25),
+        WorkoutRoutine(name: "Rowing", duration: 18),
+        WorkoutRoutine(name: "High-Intensity Interval Training (HIIT)", duration: 15),
+        WorkoutRoutine(name: "Swimming", duration: 40),
+        WorkoutRoutine(name: "Stair Climbing", duration: 20),
+        WorkoutRoutine(name: "Zumba", duration: 25),
+        WorkoutRoutine(name: "Boxing", duration: 30)
     ]
 
     @State private var selectedNavigationTag: Int?
@@ -24,17 +25,17 @@ struct WorkoutView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Today's workout routine")
+                Text("Today's cardio routine")
                     .font(.largeTitle)
                     .padding()
 
-                // Display the randomly generated workout routines with sets and reps
+                // Display the randomly generated cardio routines with durations
                 ForEach(generateRandomWorkouts(), id: \.name) { workout in
                     VStack {
                         Text(workout.name)
                             .font(.headline)
                             .padding()
-                        Text("Sets: \(workout.sets), Reps: \(workout.reps)")
+                        Text("Duration: \(workout.duration) mins")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                             .padding(.bottom)
@@ -43,7 +44,7 @@ struct WorkoutView: View {
 
                 Spacer()
             }
-            .navigationBarTitle("Workout", displayMode: .inline)
+            .navigationBarTitle("Cardio", displayMode: .inline)
             .onAppear {
                 checkLastGeneratedDate()
             }
@@ -56,7 +57,7 @@ struct WorkoutView: View {
         }
     }
 
-    // Function to generate 6 random workout routines
+    // Function to generate 3 random cardio workouts
     func generateRandomWorkouts() -> [WorkoutRoutine] {
         if shouldGenerateNewWorkouts() {
             lastGeneratedDate = Date()
@@ -79,10 +80,10 @@ struct WorkoutView: View {
         return timeDifference.hour ?? 0 >= 24
     }
 
-    // Function to generate 6 new random workout routines
+    // Function to generate 3 new random cardio workouts
     func generateNewWorkouts() -> [WorkoutRoutine] {
         var randomWorkouts: [WorkoutRoutine] = []
-        for _ in 1...6 {
+        for _ in 1...3 {
             let randomIndex = Int.random(in: 0..<workoutRoutines.count)
             randomWorkouts.append(workoutRoutines[randomIndex])
         }
@@ -91,19 +92,19 @@ struct WorkoutView: View {
 
     // Function to check the last generated date from UserDefaults
     func checkLastGeneratedDate() {
-        if let storedDate = UserDefaults.standard.object(forKey: "lastGeneratedDate") as? Date {
+        if let storedDate = UserDefaults.standard.object(forKey: "lastGeneratedDateCardio") as? Date {
             lastGeneratedDate = storedDate
         }
     }
 
     // Function to save the last generated date to UserDefaults
     func saveLastGeneratedDate() {
-        UserDefaults.standard.set(lastGeneratedDate, forKey: "lastGeneratedDate")
+        UserDefaults.standard.set(lastGeneratedDate, forKey: "lastGeneratedDateCardio")
     }
 }
 
-struct WorkoutView_Previews: PreviewProvider {
+struct CardioWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutView()
+        CardioWorkoutView()
     }
 }

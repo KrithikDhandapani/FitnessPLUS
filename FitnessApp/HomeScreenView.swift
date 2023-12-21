@@ -18,17 +18,17 @@ struct HomeScreenView: View {
                             Text("Log Food")
                                 .foregroundColor(.white)
                                 .padding(15)
-                                .background(Color.orange) // Change the button color to orange
+                                .background(Color.orange)
                                 .cornerRadius(8)
                                 .frame(width: 120, height: 120)
                         }
 
-                        // Show the WorkoutView button
-                        NavigationLink(destination: WorkoutView()) {
+                        // Show the WorkoutChooserView button
+                        NavigationLink(destination: WorkoutChooserView()) {
                             Text("Workout Plan")
                                 .foregroundColor(.white)
                                 .padding(15)
-                                .background(Color.orange) // Change the button color to orange
+                                .background(Color.orange)
                                 .cornerRadius(8)
                                 .frame(width: 120, height: 120)
                         }
@@ -38,7 +38,7 @@ struct HomeScreenView: View {
                             Text("Activity Tracker")
                                 .foregroundColor(.white)
                                 .padding(15)
-                                .background(Color.orange) // Change the button color to orange
+                                .background(Color.orange)
                                 .cornerRadius(8)
                                 .frame(width: 120, height: 120)
                         }

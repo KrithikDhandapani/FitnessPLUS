@@ -10,6 +10,7 @@ struct ContentView: View {
     @State private var isCreateAccountActive = false
     @State private var isLoggedIn = false
     @State private var loginError: String?
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
@@ -115,6 +116,7 @@ struct CreateAccountView: View {
     @ObservedObject var userData: UserData
     @Binding var isCreateAccountActive: Bool
     @State private var birthDate = Date()
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
@@ -158,6 +160,15 @@ struct CreateAccountView: View {
                     .padding(.horizontal, 20)
             }
 
+            // Back button to dismiss the sheet
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Back")
+                    .foregroundColor(.accentColor)
+                    .padding(.top, 20)
+            }
+
             Spacer()
         }
         .padding()
@@ -182,6 +193,7 @@ struct CreateAccountView: View {
 
         UserDefaults.standard.set(userData.password, forKey: userData.username)
 
+        // Dismiss the sheet after creating the account
         isCreateAccountActive = false
     }
 }

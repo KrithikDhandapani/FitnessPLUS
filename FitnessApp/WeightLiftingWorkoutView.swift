@@ -25,36 +25,41 @@ struct WeightLiftingWorkoutView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Today's weightlifting routine")
-                    .font(.largeTitle)
-                    .padding()
+            ZStack {
+                Color.white
+                    .edgesIgnoringSafeArea(.all)
 
-                // Display the randomly generated weightlifting routines with sets and reps
-                ForEach(generateRandomWorkouts(), id: \.name) { workout in
+                ScrollView {
                     VStack {
-                        Text(workout.name)
-                            .font(.headline)
-                            .padding()
-                        Text("Sets: \(workout.sets), Reps: \(workout.reps)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            .padding(.bottom)
-                    }
-                }
+                        // Display the randomly generated weightlifting routines with sets and reps
+                        ForEach(generateRandomWorkouts(), id: \.name) { workout in
+                            VStack {
+                                Text(workout.name)
+                                    .font(.title) // Increase text size by 2 units
+                                    .foregroundColor(.orange)
+                                    .bold() // Bolded orange text
+                                    .padding()
+                                Text("Sets: \(workout.sets), Reps: \(workout.reps)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                    .padding(.bottom)
+                            }
+                        }
 
-                Spacer()
-            }
-            .navigationBarTitle("Weightlifting", displayMode: .inline)
-            .onAppear {
-                checkLastGeneratedDate()
-            }
-            .navigationBarItems(trailing:
-                NavigationLink(destination: HomeScreenView(), tag: 1, selection: $selectedNavigationTag) {
-                    EmptyView()
+                        Spacer()
+                    }
+                    .navigationBarTitle("Weightlifting", displayMode: .inline)
+                    .onAppear {
+                        checkLastGeneratedDate()
+                    }
+                    .navigationBarItems(trailing:
+                        NavigationLink(destination: HomeScreenView(), tag: 1, selection: $selectedNavigationTag) {
+                            EmptyView()
+                        }
+                        .isDetailLink(false)
+                    )
                 }
-                .isDetailLink(false)
-            )
+            }
         }
     }
 

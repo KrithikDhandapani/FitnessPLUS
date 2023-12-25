@@ -23,36 +23,45 @@ struct CalisthenicsWorkoutView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Today's workout routine")
-                    .font(.largeTitle)
-                    .padding()
+            ScrollView {
+                ZStack {
+                    Color.white
+                        .edgesIgnoringSafeArea(.all)
 
-                // Display the randomly generated workout routines with sets and reps
-                ForEach(generateRandomWorkouts(), id: \.name) { workout in
                     VStack {
-                        Text(workout.name)
-                            .font(.headline)
+                        Text("Today's workout routine")
+                            .font(.largeTitle)
                             .padding()
-                        Text("Sets: \(workout.sets), Reps: \(workout.reps)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            .padding(.bottom)
-                    }
-                }
 
-                Spacer()
-            }
-            .navigationBarTitle("Workout", displayMode: .inline)
-            .onAppear {
-                checkLastGeneratedDate()
-            }
-            .navigationBarItems(trailing:
-                NavigationLink(destination: HomeScreenView(), tag: 1, selection: $selectedNavigationTag) {
-                    EmptyView()
+                        // Display the randomly generated workout routines with sets and reps
+                        ForEach(generateRandomWorkouts(), id: \.name) { workout in
+                            VStack {
+                                Text(workout.name)
+                                    .font(.title) // Increase text size by 2 units
+                                    .foregroundColor(.orange)
+                                    .bold() // Bolded orange text
+                                    .padding()
+                                Text("Sets: \(workout.sets), Reps: \(workout.reps)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                    .padding(.bottom)
+                            }
+                        }
+
+                        Spacer()
+                    }
+                    .navigationBarTitle("Workout", displayMode: .inline)
+                    .onAppear {
+                        checkLastGeneratedDate()
+                    }
+                    .navigationBarItems(trailing:
+                        NavigationLink(destination: HomeScreenView(), tag: 1, selection: $selectedNavigationTag) {
+                            EmptyView()
+                        }
+                        .isDetailLink(false)
+                    )
                 }
-                .isDetailLink(false)
-            )
+            }
         }
     }
 

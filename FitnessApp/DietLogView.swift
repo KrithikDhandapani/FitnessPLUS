@@ -21,61 +21,75 @@ struct DietLogView: View {
     @State private var protein = ""
 
     var body: some View {
-        VStack {
-            // Title
-            Text("Food Logger")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
+        ZStack {
+            Color.white
+                .edgesIgnoringSafeArea(.all)
 
-            // Display the list of food log entries
-            List(foodLogs, id: \.foodName) { entry in
-                VStack(alignment: .leading) {
-                    Text("Food: \(entry.foodName)")
-                        .font(.headline)
-                    Text("Calories: \(entry.calories) kcal")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    Text("Protein: \(entry.protein) g")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+            VStack {
+                // Title
+                Text("Food Logger")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                    .foregroundColor(.orange)
+
+                // Display the list of food log entries
+                List(foodLogs, id: \.foodName) { entry in
+                    VStack(alignment: .leading) {
+                        Text("Food: \(entry.foodName)")
+                            .font(.headline)
+                            .foregroundColor(.orange)
+                        Text("Calories: \(entry.calories) kcal")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        Text("Protein: \(entry.protein) g")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                    .padding()
                 }
-                .padding()
-            }
 
-            // Form to add a new food log entry
-            Form {
-                Section(header: Text("Add New Entry")) {
-                    TextField("Food Name", text: $foodName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                // Form to add a new food log entry
+                Form {
+                    Section(header: Text("Add New Entry")) {
+                        TextField("Food Name", text: $foodName)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .foregroundColor(.orange)
 
-                    TextField("Calories", text: $calories)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.numberPad)
+                        TextField("Calories", text: $calories)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                            .foregroundColor(.orange)
 
-                    TextField("Protein (g)", text: $protein)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.numberPad)
+                        TextField("Protein (g)", text: $protein)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                            .foregroundColor(.orange)
 
-                    Button("Log Food") {
-                        // Validate and add the new entry to the list
-                        if let caloriesValue = Int(calories),
-                           let proteinValue = Int(protein),
-                           !foodName.isEmpty {
-                            let newEntry = FoodLogEntry(foodName: foodName, calories: caloriesValue, protein: proteinValue)
-                            foodLogs.append(newEntry)
+                        Button("Log Food") {
+                            // Validate and add the new entry to the list
+                            if let caloriesValue = Int(calories),
+                               let proteinValue = Int(protein),
+                               !foodName.isEmpty {
+                                let newEntry = FoodLogEntry(foodName: foodName, calories: caloriesValue, protein: proteinValue)
+                                foodLogs.append(newEntry)
 
-                            // Clear the input fields after logging
-                            foodName = ""
-                            calories = ""
-                            protein = ""
+                                // Clear the input fields after logging
+                                foodName = ""
+                                calories = ""
+                                protein = ""
+                            }
                         }
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.orange)
+                        .cornerRadius(8)
                     }
                 }
+                .padding()
             }
-            .padding()
+            .navigationBarTitle("Diet Log", displayMode: .inline)
         }
-        .navigationBarTitle("Diet Log", displayMode: .inline)
     }
 }
 

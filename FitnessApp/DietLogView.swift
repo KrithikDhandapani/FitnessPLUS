@@ -21,75 +21,80 @@ struct DietLogView: View {
     @State private var protein = ""
 
     var body: some View {
-        ZStack {
-            Color.white
-                .edgesIgnoringSafeArea(.all)
+        VStack {
+            // Title
+            Text("Food Logger")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+                .foregroundColor(.orange)
 
-            VStack {
-                // Title
-                Text("Food Logger")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
-                    .foregroundColor(.orange)
-
-                // Display the list of food log entries
-                List(foodLogs, id: \.foodName) { entry in
-                    VStack(alignment: .leading) {
-                        Text("Food: \(entry.foodName)")
-                            .font(.headline)
-                            .foregroundColor(.orange)
-                        Text("Calories: \(entry.calories) kcal")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        Text("Protein: \(entry.protein) g")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                    .padding()
-                }
-
-                // Form to add a new food log entry
-                Form {
-                    Section(header: Text("Add New Entry")) {
-                        TextField("Food Name", text: $foodName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .foregroundColor(.orange)
-
-                        TextField("Calories", text: $calories)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.numberPad)
-                            .foregroundColor(.orange)
-
-                        TextField("Protein (g)", text: $protein)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.numberPad)
-                            .foregroundColor(.orange)
-
-                        Button("Log Food") {
-                            // Validate and add the new entry to the list
-                            if let caloriesValue = Int(calories),
-                               let proteinValue = Int(protein),
-                               !foodName.isEmpty {
-                                let newEntry = FoodLogEntry(foodName: foodName, calories: caloriesValue, protein: proteinValue)
-                                foodLogs.append(newEntry)
-
-                                // Clear the input fields after logging
-                                foodName = ""
-                                calories = ""
-                                protein = ""
-                            }
-                        }
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.orange)
-                        .cornerRadius(8)
-                    }
+            // Display the list of food log entries
+            List(foodLogs, id: \.foodName) { entry in
+                VStack(alignment: .leading) {
+                    Text("Food: \(entry.foodName)")
+                        .font(.headline)
+                        .foregroundColor(.orange)
+                    Text("Calories: \(entry.calories) kcal")
+                        .font(.subheadline)
+                        .foregroundColor(.orange)
+                    Text("Protein: \(entry.protein) g")
+                        .font(.subheadline)
+                        .foregroundColor(.orange)
                 }
                 .padding()
             }
-            .navigationBarTitle("Diet Log", displayMode: .inline)
+
+            // Form to add a new food log entry
+            Form {
+                Section(header: Text("Add New Entry")) {
+                    TextField("Food Name", text: $foodName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(.orange)
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.orange, lineWidth: 1))
+                        .background(Color.white)
+
+                    TextField("Calories", text: $calories)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
+                        .foregroundColor(.orange)
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.orange, lineWidth: 1))
+                        .background(Color.white)
+
+                    TextField("Protein (g)", text: $protein)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
+                        .foregroundColor(.orange)
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.orange, lineWidth: 1))
+                        .background(Color.white)
+
+                    Button("Log Food") {
+                        // Validate and add the new entry to the list
+                        if let caloriesValue = Int(calories),
+                           let proteinValue = Int(protein),
+                           !foodName.isEmpty {
+                            let newEntry = FoodLogEntry(foodName: foodName, calories: caloriesValue, protein: proteinValue)
+                            foodLogs.append(newEntry)
+
+                            // Clear the input fields after logging
+                            foodName = ""
+                            calories = ""
+                            protein = ""
+                        }
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.orange)
+                    .cornerRadius(8)
+                }
+            }
+            .padding()
+            .background(Color.white) // Set the background color to white
         }
+        .navigationBarTitle("Diet Log", displayMode: .inline)
     }
 }
 

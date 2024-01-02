@@ -29,8 +29,8 @@ struct CalisthenicsWorkoutView: View {
                         .edgesIgnoringSafeArea(.all)
 
                     VStack {
-                        Text("Today's workout routine")
-                            .font(.largeTitle)
+                        Text("Today's calisthenics routine")
+                            .font(.title)
                             .padding()
 
                         // Display the randomly generated workout routines with sets and reps
@@ -50,7 +50,7 @@ struct CalisthenicsWorkoutView: View {
 
                         Spacer()
                     }
-                    .navigationBarTitle("Workout", displayMode: .inline)
+                    .navigationBarTitle("", displayMode: .inline)
                     .onAppear {
                         checkLastGeneratedDate()
                     }

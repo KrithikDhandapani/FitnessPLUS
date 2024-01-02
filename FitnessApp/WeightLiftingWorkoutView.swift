@@ -31,6 +31,9 @@ struct WeightLiftingWorkoutView: View {
 
                 ScrollView {
                     VStack {
+                        Text("Today's weightlifting routine")
+                            .font(.title)
+                            .padding()
                         // Display the randomly generated weightlifting routines with sets and reps
                         ForEach(generateRandomWorkouts(), id: \.name) { workout in
                             VStack {
@@ -48,7 +51,7 @@ struct WeightLiftingWorkoutView: View {
 
                         Spacer()
                     }
-                    .navigationBarTitle("Weightlifting", displayMode: .inline)
+                    .navigationBarTitle("", displayMode: .inline)
                     .onAppear {
                         checkLastGeneratedDate()
                     }

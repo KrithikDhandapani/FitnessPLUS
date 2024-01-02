@@ -12,6 +12,18 @@ struct HomeScreenView: View {
                 VStack {
                     Spacer()
 
+                    HStack {
+                        // Move the BarChartView to the center
+                        BarChartView(data: ChartData(points: [
+                            DataPoint(label: "Calories", value: 10),
+                            DataPoint(label: "Protein", value: 20),
+                            DataPoint(label: "Steps", value: 50),
+                            DataPoint(label: "Sleep", value: 7)
+                        ]), title: "")
+                        .frame(width: 200, height: 100) // Adjust the width and height based on your preference
+                        .padding(.bottom, 20)
+                    }
+
                     HStack(spacing: 20) {
                         // Show the DietLogView button
                         NavigationLink(destination: DietLogView()) {
@@ -48,7 +60,16 @@ struct HomeScreenView: View {
             }
             .navigationBarTitle("Home", displayMode: .inline)
             // Hide the login button if the user is logged in
-            .navigationBarItems(leading: isLoggedIn ? nil : AnyView(loginButton))
+            .navigationBarItems(
+                leading: isLoggedIn ? nil : AnyView(loginButton),
+                trailing: Image(systemName: "gear")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 24)) // Adjust the font size here
+                    .onTapGesture {
+                        // Handle settings button tap
+                        // You can navigate to a settings view or show a settings sheet here
+                    }
+            )
         }
     }
 

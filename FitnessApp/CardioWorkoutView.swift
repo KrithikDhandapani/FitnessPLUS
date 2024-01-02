@@ -29,10 +29,12 @@ struct CardioWorkoutView: View {
                     Color.white
                         .edgesIgnoringSafeArea(.all)
 
-                    VStack {
+                    VStack(alignment: .center) {
                         Text("Today's cardio routine")
-                            .font(.largeTitle)
+                            .font(.title)
                             .padding()
+                        // Align to center horizontally
+                        Spacer() // Add Spacer to center-align content vertically
 
                         // Display the randomly generated cardio routines with durations
                         ForEach(generateRandomWorkouts(), id: \.name) { workout in
@@ -49,9 +51,9 @@ struct CardioWorkoutView: View {
                             }
                         }
 
-                        Spacer()
+                        Spacer() // Add Spacer to center-align content vertically
                     }
-                    .navigationBarTitle("Cardio", displayMode: .inline)
+                    .navigationBarTitle("", displayMode: .inline)
                     .onAppear {
                         checkLastGeneratedDate()
                     }

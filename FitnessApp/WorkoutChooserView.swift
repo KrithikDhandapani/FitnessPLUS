@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 struct WorkoutChooserView: View {
@@ -77,6 +78,7 @@ struct WorkoutChooserView: View {
     }
 
     // Function to determine the destination view based on the selected workout
+    
     private var destinationView: some View {
         switch selectedWorkout {
         case "Calisthenics":
@@ -96,3 +98,4 @@ struct WorkoutChooserView_Previews: PreviewProvider {
         WorkoutChooserView()
     }
 }
+

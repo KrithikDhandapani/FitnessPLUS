@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct WorkoutChooserView: View {
@@ -9,12 +8,12 @@ struct WorkoutChooserView: View {
             ZStack { // Add ZStack
                 Color.white
                     .edgesIgnoringSafeArea(.all)
-                
+
                 VStack(spacing: 20) {
                     Button(action: {
-                        selectedWorkout = "Calisthenics"
+                        selectedWorkout = "Muscle Building"
                     }) {
-                        Text("Calisthenics")
+                        Text("Muscle Building")
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
@@ -23,9 +22,9 @@ struct WorkoutChooserView: View {
                     }
 
                     Button(action: {
-                        selectedWorkout = "Weight Lifting"
+                        selectedWorkout = "Fat Loss"
                     }) {
-                        Text("Weight Lifting")
+                        Text("Fat Loss")
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
@@ -34,9 +33,9 @@ struct WorkoutChooserView: View {
                     }
 
                     Button(action: {
-                        selectedWorkout = "Cardio"
+                        selectedWorkout = "Strength Training"
                     }) {
-                        Text("Cardio")
+                        Text("Strength Training")
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
@@ -46,7 +45,7 @@ struct WorkoutChooserView: View {
 
                     NavigationLink(
                         destination: destinationView,
-                        tag: "Calisthenics",
+                        tag: "Muscle Building",
                         selection: $selectedWorkout
                     ) {
                         EmptyView()
@@ -55,7 +54,7 @@ struct WorkoutChooserView: View {
 
                     NavigationLink(
                         destination: destinationView,
-                        tag: "Weight Lifting",
+                        tag: "Fat Loss",
                         selection: $selectedWorkout
                     ) {
                         EmptyView()
@@ -64,7 +63,7 @@ struct WorkoutChooserView: View {
 
                     NavigationLink(
                         destination: destinationView,
-                        tag: "Cardio",
+                        tag: "Strength Training",
                         selection: $selectedWorkout
                     ) {
                         EmptyView()
@@ -78,15 +77,15 @@ struct WorkoutChooserView: View {
     }
 
     // Function to determine the destination view based on the selected workout
-    
+
     private var destinationView: some View {
         switch selectedWorkout {
-        case "Calisthenics":
-            return AnyView(CalisthenicsWorkoutView())
-        case "Weight Lifting":
-            return AnyView(WeightLiftingWorkoutView())
-        case "Cardio":
-            return AnyView(CardioWorkoutView())
+        case "Muscle Building":
+            return AnyView(MuscleBuildingWorkoutView())
+        case "Fat Loss":
+            return AnyView(FatLossWorkoutView())
+        case "Strength Training":
+            return AnyView(StrengthTrainingWorkoutView())
         default:
             return AnyView(EmptyView())
         }
@@ -98,4 +97,3 @@ struct WorkoutChooserView_Previews: PreviewProvider {
         WorkoutChooserView()
     }
 }
-

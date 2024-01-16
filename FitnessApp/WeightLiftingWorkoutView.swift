@@ -1,4 +1,4 @@
-
+/*
 import SwiftUI
 
 struct WeightLiftingWorkoutView: View {
@@ -118,4 +118,4 @@ struct WeightLiftingWorkoutView_Previews: PreviewProvider {
         WeightLiftingWorkoutView()
     }
 }
-
+*/

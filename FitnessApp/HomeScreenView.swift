@@ -78,13 +78,7 @@ struct HomeScreenView: View {
             // Hide the login button if the user is logged in
             .navigationBarItems(
                 leading: isLoggedIn ? nil : AnyView(loginButton),
-                trailing: Image(systemName: "gear")
-                    .foregroundColor(.orange)
-                    .font(.system(size: 24)) // Adjust the font size here
-                    .onTapGesture {
-                        // Handle settings button tap
-                        // You can navigate to a settings view or show a settings sheet here
-                    }
+                trailing: settingsButton
             )
         }
     }
@@ -98,12 +92,25 @@ struct HomeScreenView: View {
             }
         )
     }
+
+    // Computed property for the settings button
+    private var settingsButton: some View {
+        NavigationLink(
+            destination: SettingsView(),
+            label: {
+                Image(systemName: "gear")
+                    .foregroundColor(.orange)
+                    .font(.system(size: 24))
+            }
+        )
+    }
+
     struct HomeScreenView_Previews: PreviewProvider {
         static var previews: some View {
             HomeScreenView()
         }
     }
-    
+
     struct BarChartView: View {
         var label: String
         var value: Double
@@ -129,7 +136,4 @@ struct HomeScreenView: View {
             }
         }
     }
-
-
-
 }

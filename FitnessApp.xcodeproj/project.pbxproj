@@ -15,6 +15,14 @@
 		B75330C22B439C5A00936632 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330C12B439C5A00936632 /* GoalsView.swift */; };
 		B75330C42B439D3B00936632 /* WorkoutRoutinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330C32B439D3B00936632 /* WorkoutRoutinesView.swift */; };
 		B75330C72B439E5400936632 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = B75330C62B439E5400936632 /* SwiftUICharts */; };
+		B75330CD2B51F21300936632 /* MuscleBuildingWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330CC2B51F21300936632 /* MuscleBuildingWorkoutView.swift */; };
+		B75330CF2B51F23600936632 /* FatLossWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330CE2B51F23600936632 /* FatLossWorkoutView.swift */; };
+		B75330D12B51F25100936632 /* StrengthTrainingWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330D02B51F25100936632 /* StrengthTrainingWorkoutView.swift */; };
+		B75330D42B51F3CA00936632 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = B75330D32B51F3CA00936632 /* URLImage */; };
+		B75330D62B51F3CA00936632 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = B75330D52B51F3CA00936632 /* URLImageStore */; };
+		B75330DD2B51F76300936632 /* MBWorkoutOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330DC2B51F76300936632 /* MBWorkoutOne.swift */; };
+		B75330DF2B51FCC400936632 /* MBWorkoutTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330DE2B51FCC400936632 /* MBWorkoutTwo.swift */; };
+		B75330E12B54FFD500936632 /* MBWorkoutThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330E02B54FFD500936632 /* MBWorkoutThree.swift */; };
 		B75D28692B290BD90066A748 /* FitnessAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75D28682B290BD90066A748 /* FitnessAppApp.swift */; };
 		B75D286B2B290BD90066A748 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75D286A2B290BD90066A748 /* ContentView.swift */; };
 		B75D286D2B290BDB0066A748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75D286C2B290BDB0066A748 /* Assets.xcassets */; };
@@ -33,6 +41,12 @@
 		B75330BF2B439C4A00936632 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		B75330C12B439C5A00936632 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		B75330C32B439D3B00936632 /* WorkoutRoutinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRoutinesView.swift; sourceTree = "<group>"; };
+		B75330CC2B51F21300936632 /* MuscleBuildingWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleBuildingWorkoutView.swift; sourceTree = "<group>"; };
+		B75330CE2B51F23600936632 /* FatLossWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatLossWorkoutView.swift; sourceTree = "<group>"; };
+		B75330D02B51F25100936632 /* StrengthTrainingWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthTrainingWorkoutView.swift; sourceTree = "<group>"; };
+		B75330DC2B51F76300936632 /* MBWorkoutOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBWorkoutOne.swift; sourceTree = "<group>"; };
+		B75330DE2B51FCC400936632 /* MBWorkoutTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBWorkoutTwo.swift; sourceTree = "<group>"; };
+		B75330E02B54FFD500936632 /* MBWorkoutThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBWorkoutThree.swift; sourceTree = "<group>"; };
 		B75D28652B290BD90066A748 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75D28682B290BD90066A748 /* FitnessAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppApp.swift; sourceTree = "<group>"; };
 		B75D286A2B290BD90066A748 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75330D42B51F3CA00936632 /* URLImage in Frameworks */,
+				B75330D62B51F3CA00936632 /* URLImageStore in Frameworks */,
 				B75330C72B439E5400936632 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +107,12 @@
 				B75330BF2B439C4A00936632 /* MyProfileView.swift */,
 				B75330C12B439C5A00936632 /* GoalsView.swift */,
 				B75330C32B439D3B00936632 /* WorkoutRoutinesView.swift */,
+				B75330CC2B51F21300936632 /* MuscleBuildingWorkoutView.swift */,
+				B75330DC2B51F76300936632 /* MBWorkoutOne.swift */,
+				B75330DE2B51FCC400936632 /* MBWorkoutTwo.swift */,
+				B75330E02B54FFD500936632 /* MBWorkoutThree.swift */,
+				B75330CE2B51F23600936632 /* FatLossWorkoutView.swift */,
+				B75330D02B51F25100936632 /* StrengthTrainingWorkoutView.swift */,
 				B75D286C2B290BDB0066A748 /* Assets.xcassets */,
 			);
 			path = FitnessApp;
@@ -122,6 +144,8 @@
 			name = FitnessApp;
 			packageProductDependencies = (
 				B75330C62B439E5400936632 /* SwiftUICharts */,
+				B75330D32B51F3CA00936632 /* URLImage */,
+				B75330D52B51F3CA00936632 /* URLImageStore */,
 			);
 			productName = FitnessApp;
 			productReference = B75D28652B290BD90066A748 /* FitnessApp.app */;
@@ -153,6 +177,7 @@
 			mainGroup = B75D285C2B290BD90066A748;
 			packageReferences = (
 				B75330C52B439E5400936632 /* XCRemoteSwiftPackageReference "ChartView" */,
+				B75330D22B51F3CA00936632 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = B75D28662B290BD90066A748 /* Products */;
 			projectDirPath = "";
@@ -185,13 +210,19 @@
 				B77F3F2E2B29624800718AB6 /* DietLogView.swift in Sources */,
 				B75330C02B439C4A00936632 /* MyProfileView.swift in Sources */,
 				B75330C22B439C5A00936632 /* GoalsView.swift in Sources */,
+				B75330DF2B51FCC400936632 /* MBWorkoutTwo.swift in Sources */,
 				B75330B82B33B1ED00936632 /* CardioWorkoutView.swift in Sources */,
 				B75D286B2B290BD90066A748 /* ContentView.swift in Sources */,
+				B75330DD2B51F76300936632 /* MBWorkoutOne.swift in Sources */,
+				B75330D12B51F25100936632 /* StrengthTrainingWorkoutView.swift in Sources */,
 				B75330BA2B33B29F00936632 /* WorkoutChooserView.swift in Sources */,
 				B75330BE2B439B5B00936632 /* SettingsView.swift in Sources */,
+				B75330CD2B51F21300936632 /* MuscleBuildingWorkoutView.swift in Sources */,
 				B77F3F2C2B2919DF00718AB6 /* CalisthenicsWorkoutView.swift in Sources */,
 				B77F3F312B2A7DA200718AB6 /* ActivityTrackerView.swift in Sources */,
+				B75330CF2B51F23600936632 /* FatLossWorkoutView.swift in Sources */,
 				B75330B62B33B0AD00936632 /* WeightLiftingWorkoutView.swift in Sources */,
+				B75330E12B54FFD500936632 /* MBWorkoutThree.swift in Sources */,
 				B75D28692B290BD90066A748 /* FitnessAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +436,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		B75330D22B51F3CA00936632 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -412,6 +451,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B75330C52B439E5400936632 /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
+		};
+		B75330D32B51F3CA00936632 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75330D22B51F3CA00936632 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		B75330D52B51F3CA00936632 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75330D22B51F3CA00936632 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

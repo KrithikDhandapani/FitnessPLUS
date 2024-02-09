@@ -38,7 +38,9 @@ struct FLWorkoutTwo: View {
 
                                         Spacer()
 
-                                        Text("4 12, 10, 8, 6")
+                                        Text("4 x 6-10") // Updated sets x reps
+                                                                                   .foregroundColor(.black) // Changed text color to black
+                                                                                   .bold()
                                     }
                                 }
 

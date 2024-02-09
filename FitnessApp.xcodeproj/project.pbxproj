@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B73741732B74BC31007DF215 /* STWorkoutOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73741722B74BC31007DF215 /* STWorkoutOne.swift */; };
+		B73741752B74BC73007DF215 /* STWorkoutTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73741742B74BC73007DF215 /* STWorkoutTwo.swift */; };
+		B73741772B74BC82007DF215 /* STWorkoutThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73741762B74BC82007DF215 /* STWorkoutThree.swift */; };
 		B75330B62B33B0AD00936632 /* WeightLiftingWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330B52B33B0AD00936632 /* WeightLiftingWorkoutView.swift */; };
 		B75330B82B33B1ED00936632 /* CardioWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330B72B33B1ED00936632 /* CardioWorkoutView.swift */; };
 		B75330BA2B33B29F00936632 /* WorkoutChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75330B92B33B29F00936632 /* WorkoutChooserView.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B73741722B74BC31007DF215 /* STWorkoutOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STWorkoutOne.swift; sourceTree = "<group>"; };
+		B73741742B74BC73007DF215 /* STWorkoutTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STWorkoutTwo.swift; sourceTree = "<group>"; };
+		B73741762B74BC82007DF215 /* STWorkoutThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STWorkoutThree.swift; sourceTree = "<group>"; };
 		B75330B52B33B0AD00936632 /* WeightLiftingWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLiftingWorkoutView.swift; sourceTree = "<group>"; };
 		B75330B72B33B1ED00936632 /* CardioWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioWorkoutView.swift; sourceTree = "<group>"; };
 		B75330B92B33B29F00936632 /* WorkoutChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutChooserView.swift; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 				B771AE0A2B60A9F900A59A18 /* FLWorkoutTwo.swift */,
 				B771AE0D2B60AA1400A59A18 /* FLWorkoutThree.swift */,
 				B75330D02B51F25100936632 /* StrengthTrainingWorkoutView.swift */,
+				B73741722B74BC31007DF215 /* STWorkoutOne.swift */,
+				B73741742B74BC73007DF215 /* STWorkoutTwo.swift */,
+				B73741762B74BC82007DF215 /* STWorkoutThree.swift */,
 				B75D286C2B290BDB0066A748 /* Assets.xcassets */,
 			);
 			path = FitnessApp;
@@ -222,6 +231,8 @@
 				B75330C22B439C5A00936632 /* GoalsView.swift in Sources */,
 				B75330DF2B51FCC400936632 /* MBWorkoutTwo.swift in Sources */,
 				B75330B82B33B1ED00936632 /* CardioWorkoutView.swift in Sources */,
+				B73741772B74BC82007DF215 /* STWorkoutThree.swift in Sources */,
+				B73741732B74BC31007DF215 /* STWorkoutOne.swift in Sources */,
 				B75D286B2B290BD90066A748 /* ContentView.swift in Sources */,
 				B771AE092B60A9E900A59A18 /* FLWorkoutOne.swift in Sources */,
 				B75330DD2B51F76300936632 /* MBWorkoutOne.swift in Sources */,
@@ -230,6 +241,7 @@
 				B771AE0B2B60A9F900A59A18 /* FLWorkoutTwo.swift in Sources */,
 				B75330BE2B439B5B00936632 /* SettingsView.swift in Sources */,
 				B75330CD2B51F21300936632 /* MuscleBuildingWorkoutView.swift in Sources */,
+				B73741752B74BC73007DF215 /* STWorkoutTwo.swift in Sources */,
 				B77F3F2C2B2919DF00718AB6 /* CalisthenicsWorkoutView.swift in Sources */,
 				B77F3F312B2A7DA200718AB6 /* ActivityTrackerView.swift in Sources */,
 				B75330CF2B51F23600936632 /* FatLossWorkoutView.swift in Sources */,

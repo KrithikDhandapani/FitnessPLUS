@@ -37,7 +37,9 @@ struct FLWorkoutThree: View {
 
                                         Spacer()
 
-                                        Text("4 12, 10, 8, 6")
+                                        Text("4 x 6-10") // Updated sets x reps
+                                                                                   .foregroundColor(.black) // Changed text color to black
+                                                                                   .bold()
                                     }
                                 }
 
@@ -50,7 +52,7 @@ struct FLWorkoutThree: View {
                 }
 
                 Section(header: Text("Equipment Needed")) {
-                    Text("Barbell\nBodyweight\n Cables\nDumbbells\nEZ Bar\nMachines\nOther")
+                    Text("Barbell\nBodyweight\nCables\nDumbbells\nEZ Bar\nMachines\nOther")
                 }
             }
             .padding()

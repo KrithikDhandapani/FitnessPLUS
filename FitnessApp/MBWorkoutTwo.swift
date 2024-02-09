@@ -1,60 +1,59 @@
 import SwiftUI
-import URLImage
 
 struct MBWorkoutTwo: View {
+    let workoutDaysOrder = ["Day 1: Chest & Triceps", "Day 2: Legs & Core", "Day 3: Back & Biceps", "Day 4: Legs & Core", "Day 5: Complete Upper Body"]
+
+    let workoutDays = [
+        "Day 1: Chest & Triceps": ["Dumbbell Bench Press", "Incline Dumbbell Bench Press", "Dumbbell Floor Press", "Standing Dumbbell Press", "Dumbbell Lateral Raise", "Dumbbell Tricep Kickback"],
+        "Day 2: Legs & Core": ["Dumbbell Goblet Squat", "Dumbbell Stiff Leg Deadlift", "Dumbbell Rear Lunge", "Dumbbell Frog Squat", "Dumbbell Calf Raise", "Weighted Crunch", "Side Planks"],
+        "Day 3: Back & Biceps": ["Dumbbell Bent Over Row", "Tripod Dumbbell Row", "Dumbbell Pullover", "Reverse Grip Dumbbell Row", "Dumbbell Bicep Curl", "Dumbbell Hammer Curl"],
+        "Day 4: Legs & Core": ["Dumbbell Squat", "Dumbbell Deadlift", "Dumbbell Split Squat", "Dumbbell Hip Thrust", "Dumbbell Calf Raise", "Dumbbell Side Bends", "Plank"],
+        "Day 5: Complete Upper Body": ["One Arm Dumbbell Rows", "Dumbbell Arnold Press", "Incline Dumbbell Bench Press", "Chest Supported Dumbbell Row", "Dumbbell Pinwheel Curl", "Overhead Dumbbell Tricep Extension", "Dumbbell Shrug"]
+    ]
+
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                // Top Image
-                URLImage(URL(string: "https://cdn.muscleandstrength.com/sites/default/files/5_day_dumbbell_workout_-_1200x630.jpg")!) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 200)
-                        .clipped()
-                        .cornerRadius(15)
+        NavigationView {
+            List {
+                Section(header: Text("Overview")) {
+                    Text("This 5-day dumbbell workout split is designed to help you build muscle and strength using only dumbbells. Each day focuses on different muscle groups to ensure a balanced and effective workout routine.")
                 }
 
-                // Workout Title
-                Text("5 Day Dumbbell Workout Split")
-                    .font(.title)
-                    .bold()
-                    .padding(.top, 10)
+                Section(header: Text("Workout Schedule")) {
+                    ForEach(workoutDaysOrder, id: \.self) { day in
+                        if let exercises = workoutDays[day] {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(day)
+                                    .font(.headline)
+                                    .bold()
 
-                // Workout Overview
-                Text("Overview")
-                    .font(.headline)
-                    .padding(.top, 5)
+                                ForEach(exercises, id: \.self) { exercise in
+                                    HStack {
+                                        Text(exercise)
+                                            .foregroundColor(.orange)
+                                            .bold()
 
-                Text("This 5-day dumbbell workout split is designed to help you build muscle and strength using only dumbbells. Each day focuses on different muscle groups to ensure a balanced and effective workout routine.")
+                                        Spacer()
 
-                // Workout Details
-                Text("Workout Details")
-                    .font(.headline)
-                    .padding(.top, 10)
+                                        Text("4 x 6-10") // Sets x Reps information
+                                            .foregroundColor(.black) // Text color changed to black
+                                            .bold()
+                                    }
+                                    .padding(.leading)
+                                }
+                            }
+                        }
+                    }
+                }
 
-                // Add your workout details here...
+                Section(header: Text("Equipment Needed")) {
+                    Text("All you need for this workout is a set of dumbbells. Choose a weight that challenges you while allowing you to maintain proper form throughout each exercise.")
+                }
 
-                // Equipment Needed
-                Text("Equipment Needed")
-                    .font(.headline)
-                    .padding(.top, 10)
-
-                Text("All you need for this workout is a set of dumbbells. Choose a weight that challenges you while allowing you to maintain proper form throughout each exercise.")
-
-                // Additional Tips
-                Text("Additional Tips")
-                    .font(.headline)
-                    .padding(.top, 10)
-
-                // Add additional tips and information...
-
-                // Add any other sections you need...
-
+                // Additional sections can be added here if needed
             }
-            .padding()
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("5 Day Dumbbell Workout Split", displayMode: .inline)
         }
-        .navigationBarTitle("5 Day Dumbbell Workout Split", displayMode: .inline)
     }
 }
 

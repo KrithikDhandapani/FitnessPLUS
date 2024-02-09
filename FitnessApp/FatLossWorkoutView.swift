@@ -15,7 +15,7 @@ struct FatLossWorkoutView: View {
                             onTapGesture: {
                                 showFLWorkoutOneDetails.toggle()
                             })
-                    .background(NavigationLink("", destination: FLWorkoutOne(), isActive: $showFLWorkoutOneDetails))
+                    .background(NavigationLink("", destination: STWorkoutTwo(), isActive: $showFLWorkoutOneDetails))
 
                 // Workout 2
                 WorkoutCard(imageURL: "https://cdn.muscleandstrength.com/sites/default/files/styles/800x500/public/fat_blaster_-_1200x630.jpg?itok=Awz66KHc",

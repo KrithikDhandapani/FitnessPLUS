@@ -111,7 +111,7 @@ struct STWorkoutTwo: View {
     }
 }
 
-struct FLWorkoutOne_Previews: PreviewProvider {
+struct STWorkoutTwo_Previews: PreviewProvider {
     static var previews: some View {
         STWorkoutTwo()
     }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct STWorkoutTwo: View {
+struct STWorkoutThree: View {
     let workoutDaysOrder = [
         "Day 1: Chest & Abs",
         "Day 2: Back",
@@ -111,8 +111,8 @@ struct STWorkoutTwo: View {
     }
 }
 
-struct FLWorkoutOne_Previews: PreviewProvider {
+struct STWorkoutThree_Previews: PreviewProvider {
     static var previews: some View {
-        STWorkoutTwo()
+        STWorkoutThree()
     }
 }

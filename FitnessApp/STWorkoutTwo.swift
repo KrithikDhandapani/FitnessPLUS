@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct STWorkoutTwo: View {
+struct STWorkoutThree: View {
     let workoutDaysOrder = [
         "Day 1: Chest & Abs",
         "Day 2: Back",

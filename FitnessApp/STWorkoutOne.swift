@@ -2,73 +2,67 @@ import SwiftUI
 
 struct STWorkoutOne: View {
     let workoutDaysOrder = [
-        "Day 1: Chest & Abs",
-        "Day 2: Back",
-        "Day 3: Shoulders",
-        "Day 4: Arms",
-        "Day 5: Legs",
-        "Day 6: Cardio",
-        "Day 7: Rest"
+        "Push Workout A - Chest, Shoulders & Triceps",
+        "Pull Workout A - Back, Traps & Biceps",
+        "Legs Workout A - Quads, Hamstrings & Calves",
+        "Push Workout B - Chest, Shoulders & Triceps",
+        "Pull Workout B - Back, Traps & Biceps",
+        "Legs Workout B - Quads, Hamstrings & Calves"
     ]
     
     let workoutDays = [
-        "Day 1: Chest & Abs": [
-            "Incline Barbell Bench Press",
-            "Dumbbell Fly",
-            "Weighted Dip",
-            "Pec-Deck",
-            "Cable Crossover",
-            "Pushup",
-            "Hanging Leg Raise",
-            "Decline Situp",
-            "Side Bends",
-            "Plank",
-            "Rope Crunch"
+        "Push Workout A - Chest, Shoulders & Triceps": [
+            "Flat Barbell Bench Press",
+            "Flat Barbell Bench Press (Use 20% less weight than your previous working sets)",
+            "Seated Behind the Neck Press",
+            "(Weighted) Tricep Dips",
+            "Standing Cable Crossovers",
+            "Seated Tricep Extensions (Dumbbell, Rope, or EZ Bar)",
+            "Seated Dumbbell Lateral Raises"
         ],
-        "Day 2: Back": [
-            "Neutral Grip Pullups",
-            "Bent Over Barbell Row",
-            "Reverse Grip Pulldown",
-            "Straight Arm Pulldown",
-            "Wide Grip Seated Row",
-            "Rack Deadlift"
+        "Pull Workout A - Back, Traps & Biceps": [
+            "Barbell Conventional Deadlift",
+            "Barbell Conventional Deadlift (Use 20% less weight than your previous working sets)",
+            "(Weighted) Chin-ups",
+            "Chest Supported Rows",
+            "Shrugs (Dumbbell, Barbell, or Trap Bar)",
+            "Standing Barbell Curls", "Standing Cable Reverse Fly"
         ],
-        "Day 3: Shoulders": [
-            "Upright Row",
-            "Seated Lateral Raise",
-            "Seated Smith Machine Shoulder Press",
-            "Front Plate Raise",
-            "High Rope Face Pull"
-        ],
-        "Day 4: Arms": [
-            "EZ Bar Preacher Curl",
-            "Close Grip Bench Press",
-            "Hammer Curl",
-            "Overhead Rope Extension",
-            "Standing Cable Curl",
-            "Reverse Grip Pushdown"
-        ],
-        "Day 5: Legs": [
-            "Squat",
+        "Legs Workout A - Quads, Hamstrings & Calves": [
+            "Barbell Back Squat",
+            "Barbell Back Squat (Use 20% less weight than your previous working sets)",
             "Leg Press",
-            "Single Leg Extension",
-            "Stiff-Legged Deadlift",
-            "Seated Leg Curl",
-            "Lying Leg Curl",
-            "Standing Calf Raise",
-            "Seated Calf Raise"
+            "Reverse Hyperextension",
+            "Leg Curl", "Calf Raises"
         ],
-        "Day 6: Cardio": [
-            "High Intensity Interval Training (HIIT Style) for 20 total minutes"
+        "Push Workout B - Chest, Shoulders & Triceps": [
+            "Standing Overhead Press",
+            "Standing Overhead Press (Use 20% less weight than your previous working sets)",
+            "Incline Bench Press",
+            "Close Grip Bench Press",
+            "Seated Machine Fly",
+            "Standing Tricep Pushdown", "Standing Cable Lateral Raises"
         ],
-        "Day 7: Rest": []
+        "Pull Workout B - Back, Traps & Biceps": [
+            "Barbell Snatch Grip Deadlift",
+            "Barbell Snatch Grip Deadlift (Use 20% less weight than your previous working sets)",
+            "Barbell Rows",
+            "(Weighted) Pull-ups",
+            "1-arm Rows",
+            "Incline Dumbbell Curl",
+            "Seated Machine Reverse Fly"
+        ],
+        "Legs Workout B - Quads, Hamstrings & Calves": [
+            "Barbell Front Squat", "Barbell Front Squat (Use 20% less weight than your previous working sets)", "Barbell Romanian Deadlifts", "Barbell Hip Thrusts", "Dumbbell Lunges", "Seated Leg Extensions", "Hanging Leg Raises"
+        ],
+        
     ]
 
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Overview")) {
-                    Text("While you might not be using the extra plates and bigger dumbbells like you were during your bulk, you will still be going heavy and upping the intensity. This five day split won’t be a traditional program. You’re going to push yourself in a variety of ways to develop that muscle while etching out the detail that you need to create that shredded look.")
+                    Text("This 6 day push/pull/legs workout routine split is a high volume, rest-pause system designed for intermediate lifters looking to gain muscle and strength.")
                 }
 
                 Section(header: Text("Workout Schedule")) {
@@ -102,7 +96,7 @@ struct STWorkoutOne: View {
                 }
 
                 Section(header: Text("Equipment Needed")) {
-                    Text("Barbell\nBodyweight\nCables\nDumbbells\nEZ Bar\nMachines")
+                    Text("Barbell\nBodyweight\nDumbbells\nMachines")
                 }
             }
             .padding()

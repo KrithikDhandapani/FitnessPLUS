@@ -13,15 +13,7 @@ struct SettingsView: View {
                     .padding(20)
             }
 
-            NavigationLink(destination: GoalsView()) {
-                Text("Goals")
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.orange)
-                    .cornerRadius(8)
-                    .padding(20)
-            }
+         
 
             NavigationLink(destination: WorkoutRoutinesView()) {
                 Text("Workout Routines")

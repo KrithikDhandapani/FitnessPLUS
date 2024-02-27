@@ -1,53 +1,44 @@
 import SwiftUI
 
-struct STWorkoutThree: View {
+struct STTWorkoutTwo: View {
     let workoutDaysOrder = [
-        "Monday - Squat",
-        "Tuesday - Bench Press",
-        "Wednesday - Deadlift",
-        "Thursday - Standing Barbell Press",
-        "Friday - Bent-Over Barbell Row"
+        "Workout A",
+        "Workout B",
+        "Workout C"
     ]
     
     let workoutDays = [
-        "Monday - Squat": [
-            "Squat",
-            "Front Squat",
-            "Bulgarian Split Squat",
-            "Leg Extension"
-        ],
-        "Tuesday - Bench Press": [
+        "Workout A": [
+            "Squats",
             "Bench Press",
-            "Incline Bench Press",
-            "Dumbbell Fly",
-            "Tricep Dips"
-           
+            "Barbell Row",
+            "Upright Row",
+            "Skullcrushers",
+            "Dumbbell Curls",
+            "Leg Curls",
+            "Ab Wheel Roll Out"
         ],
-        "Wednesday - Deadlift": [
-            "Deadlift",
-            "Good Mornings",
-            "Lying Leg Curl",
-            "Walking Lunge"
+        "Workout B": [
+            "Deadlifts",
+            "Romanian Deadlift",
+            "Seated Overhead Press",
+            "Pull Ups",
+            "Dips",
+            "Barbell Shrugs", "Calf Raises", "Plank"
         ],
-        "Thursday - Standing Barbell Press": [
-            "Standing Barbell Press",
-            "Front Raise",
-            "Seated Lateral Raise",
-            "Rope Tricep Extension"
-        ],
-        "Friday - Bent-Over Barbell Row": [
-            "Bent-Over Barbell Row",
-            "Lat Pull Down",
-            "Rear Lateral Raise",
-            "Incline Dumbbell Curl"
+        "Workout C": [
+            "Squats",
+            "Incline Dumbbell Bench Press",
+            "One Arm Dumbbell Row",
+            "Seated Arnold Press",
+            "Cable Tricep Extensions", "Barbell Curls", "Leg Curls", "Ab Wheel Roll Out"
         ]
-    ]
-
+]
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Overview")) {
-                    Text("Build total body strength with this 5-day strength-building program! You’re going to train five days a week and should be in and out of the gym in less than an hour.")
+                    Text("This M&S mass building routine is perfect for lifters who want to give full body workouts a try. All major muscle groups are trained, and the program includes a 20 rep set of squats.")
                 }
 
                 Section(header: Text("Workout Schedule")) {
@@ -66,7 +57,7 @@ struct STWorkoutThree: View {
 
                                         Spacer()
 
-                                        Text("3 x 5-8") // Updated sets x reps
+                                        Text("5 x 5-10") // Updated sets x reps
                                             .foregroundColor(.black) // Changed text color to black
                                             .bold()
                                     }
@@ -81,7 +72,7 @@ struct STWorkoutThree: View {
                 }
 
                 Section(header: Text("Equipment Needed")) {
-                    Text("Barbell\nCables\nDumbbells\nMachines")
+                    Text("Barbell\nBodyweight\nDumbbells")
                 }
             }
             .padding()
@@ -90,8 +81,8 @@ struct STWorkoutThree: View {
     }
 }
 
-struct STWorkoutThree_Previews: PreviewProvider {
+struct STTWorkoutTwo_Previews: PreviewProvider {
     static var previews: some View {
-        STWorkoutThree()
+        STTWorkoutTwo()
     }
 }
